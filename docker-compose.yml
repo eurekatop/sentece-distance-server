@@ -1,0 +1,12 @@
+version: '3'
+services:
+  ia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/:/src
+      - ./hiiamsid/:/hiiamsid
+    expose:
+      - 8000:8000
+    network_mode: "host"

@@ -10,6 +10,9 @@ git lfs install
 git clone https://huggingface.co/hiiamsid/sentence_similarity_spanish_es
 
 
+#prod
+gunicorn -w 4 --chdir ./src 'service:app'
+
 #test
 curl -X POST http://127.0.0.1:5000/similarity \
 --header "Content-Type: application/json" \

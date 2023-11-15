@@ -5,7 +5,7 @@ import Levenshtein
 app = Flask(__name__)
 
 # Cargar el modelo de embeddings
-model = SentenceTransformer('hiiamsid/sentence_similarity_spanish_es')
+model = SentenceTransformer('../hiiamsid/sentence_similarity_spanish_es')
 
 @app.route('/similarity', methods=['POST'])
 def calculate_similarity():
