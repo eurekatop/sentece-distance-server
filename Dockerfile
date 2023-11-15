@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 RUN apt update && \
     apt install --no-install-recommends -y build-essential gcc && \
@@ -17,6 +17,8 @@ RUN apt update && \
 COPY requirements.txt /requirements.txt
 COPY entrypoint.sh /entrypoint.sh
 
+#RUN pip3 install --upgrade pip
+#RUN pip3 install -r requirements.txt --verbose
 
 CMD ["sh", "entrypoint.sh"]
 

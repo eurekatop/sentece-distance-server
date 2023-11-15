@@ -7,6 +7,5 @@ services:
     volumes:
       - ./src/:/src
       - ./hiiamsid/:/hiiamsid
-    expose:
-      - 8000:8000
-    network_mode: "host"
+    ports:
+      - "8900:8000"
