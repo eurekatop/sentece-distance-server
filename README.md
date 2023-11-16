@@ -29,4 +29,31 @@ curl -X POST http://127.0.0.1:5000/similarity \
 --data '{"sentence1":"Si lo intentas, a menudo estarás solo, y a veces asustado","sentence2":"Si lo intentas, a menudo estarás solo, y a veces atemorizado", "similarity_algorithm":"levenshtein_distance"}'
 
 
+curl -X POST http://127.0.0.1:5000/similarity \
+--header "Content-Type: application/json" \
+--data '{"sentence1":"Si lo intentas, a menudo estarás solo, y a veces asustado","sentence2":"Si lo intentas, a menudo estarás solo, y a veces atemorizado", "similarity_algorithm":"cosine", "measure":"dot_product"}'
+
+curl -X POST http://127.0.0.1:5000/similarity \
+--header "Content-Type: application/json" \
+--data '{"sentence1":"Si lo intentas, a menudo estarás solo, y a veces asustado","sentence2":"Si lo intentas, a menudo estarás solo, y a veces atemorizado", "similarity_algorithm":"cosine", "measure":"pairwise_cos_sim"}'
+
+curl -X POST http://127.0.0.1:5000/similarity \
+--header "Content-Type: application/json" \
+--data '{"sentence1":"Si lo intentas, a menudo estarás solo, y a veces asustado","sentence2":"Si lo intentas, a menudo estarás solo, y a veces atemorizado", "similarity_algorithm":"cosine", "measure":"cos_sim"}'
+
+
+
+
+# USING
+    
+    ## BERT
+    - https://huggingface.co/hiiamsid/sentence_similarity_spanish_es
+    
+    ## SBERT
+    - https://www.sbert.net/docs/pretrained_models.html
+        - Model: 
+          - https://huggingface.co/sentence-transformers/all-MiniLM-L12-v2
+          - https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v1   
+          - https://huggingface.co/sentence-transformers/multi-qa-MiniLM-L6-cos-v1
+
 
