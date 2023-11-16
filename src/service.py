@@ -1,8 +1,18 @@
 from flask import Flask, request, jsonify
 from sentence_transformers import SentenceTransformer, util
 import Levenshtein
+import os
+from config import config
 
 app = Flask(__name__)
+
+env = os.environ.get('FLASK_ENV', 'development')
+if env == 'production':
+    config = config.ProductionConfig()
+else:
+    config = config.DevelopmentConfig()
+
+
 
 # Cargar el modelo de embeddings
 model = SentenceTransformer('../hiiamsid/sentence_similarity_spanish_es')
@@ -32,5 +42,8 @@ def calculate_similarity():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
+print ( config )
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=config.DEBUG)

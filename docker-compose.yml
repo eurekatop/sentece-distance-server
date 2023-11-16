@@ -9,3 +9,5 @@ services:
       - ./hiiamsid/:/hiiamsid
     ports:
       - "8900:8000"
+    env_file:
+      - .env
