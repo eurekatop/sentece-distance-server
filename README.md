@@ -1,4 +1,3 @@
-⚠️ This repo is for experimental purposes / PoC only.
 # sentece-distance-server
 
 #using 
